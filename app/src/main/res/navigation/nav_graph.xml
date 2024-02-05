@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.codemobiles.android.singleactivity.demo.fragments.MainFragment"
+        android:label="MainFragment"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_mainFragment_to_anotherFragment"
+            app:enterAnim="@anim/fab_slide_in_from_right"
+            app:exitAnim="@anim/fab_slide_out_to_left"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out"
+            app:destination="@id/anotherFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/anotherFragment"
+        android:name="com.codemobiles.android.singleactivity.demo.fragments.AnotherFragment"
+        android:label="AnotherFragment"
+        tools:layout="@layout/fragment_another" >
+        <argument
+            android:name="message"
+            app:argType="string" />
+    </fragment>
+</navigation>
